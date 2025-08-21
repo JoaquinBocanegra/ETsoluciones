@@ -1,0 +1,81 @@
+/* ================================
+   VARIABLES DE COLOR Y ESTILO
+   Cambiá los valores para personalizar
+================================= */
+:root {
+  --bg: #0B0F14;        /* Color de fondo de refuerzo */
+  --text: #E9F1F7;      /* Texto principal */
+  --muted: #A6B3C2;     /* Texto secundario */
+  --brand: #5AD2FF;     /* Color principal de la marca */
+  --brand-2: #7BFFB2;   /* Color secundario/acento */
+  --radius: 12px;       /* Bordes redondeados */
+}
+
+/* ================================
+   ESTILOS GENERALES
+================================= */
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text);
+
+  /* Fondo: imagen + color de refuerzo */
+  background: 
+    url("../img/fondo.jpg") no-repeat center center fixed,
+    var(--bg);
+  background-size: cover;   /* que la imagen cubra toda la pantalla */
+}
+
+/* ================================
+   HEADER
+================================= */
+header {
+  background: rgba(0, 0, 0, 0.6); /* semi-transparente sobre la imagen */
+  backdrop-filter: blur(4px);
+  padding: 1rem;
+}
+
+header img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* ================================
+   TITULOS Y TEXTOS
+================================= */
+h1, h2, h3, h4, h5 {
+  font-weight: 800;
+  color: var(--brand);
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ================================
+   BOTONES PERSONALIZADOS
+================================= */
+.btn-brand {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: #000;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.6rem 1.2rem;
+}
+
+.btn-brand:hover {
+  filter: brightness(1.1);
+}
+
+/* ================================
+   FOOTER
+================================= */
+footer {
+  background: rgba(0,0,0,0.7);
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
