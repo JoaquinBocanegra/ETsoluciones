@@ -6,7 +6,7 @@
   --bg: #0B0F14;        /* Color de fondo de refuerzo */
   --text: #E9F1F7;      /* Texto principal */
   --muted: #A6B3C2;     /* Texto secundario */
-  --brand: #5AD2FF;     /* Color principal de la marca */
+  --brand: #5aff9f;     /* Color principal de la marca */
   --brand-2: #7BFFB2;   /* Color secundario/acento */
   --radius: 12px;       /* Bordes redondeados */
 }
@@ -21,7 +21,7 @@ body {
 
   /* Fondo: imagen + color de refuerzo */
   background: 
-    url("../img/fondo.jpg") no-repeat center center fixed,
+    url("../img/fondo.png") no-repeat center center fixed,
     var(--bg);
   background-size: cover;   /* que la imagen cubra toda la pantalla */
 }
