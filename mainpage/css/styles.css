@@ -1,81 +1,74 @@
-/* ================================
-   VARIABLES DE COLOR Y ESTILO
-   Cambiá los valores para personalizar
-================================= */
-:root {
-  --bg: #0B0F14;        /* Color de fondo de refuerzo */
-  --text: #E9F1F7;      /* Texto principal */
-  --muted: #A6B3C2;     /* Texto secundario */
-  --brand: #5aff9f;     /* Color principal de la marca */
-  --brand-2: #7BFFB2;   /* Color secundario/acento */
-  --radius: 12px;       /* Bordes redondeados */
+/* === Fondo global BLANCO (más legible) === */
+body{
+  margin:0;
+  font-family:'Inter', system-ui, sans-serif;
+  color:var(--text);
+  background:#ffffff;            /* <- blanco global */
 }
 
-/* ================================
-   ESTILOS GENERALES
-================================= */
-body {
-  margin: 0;
-  font-family: 'Inter', system-ui, sans-serif;
-  color: var(--text);
-
-  /* Fondo: imagen + color de refuerzo */
-  background: 
-    url("../img/fondo.png") no-repeat center center fixed,
-    var(--bg);
-  background-size: cover;   /* que la imagen cubra toda la pantalla */
-}
-
-/* ================================
-   HEADER
-================================= */
-header {
-  background: rgba(0, 0, 0, 0.6); /* semi-transparente sobre la imagen */
-  backdrop-filter: blur(4px);
-  padding: 1rem;
-}
-
-header img {
-  display: block;
-  margin: 0 auto;
-}
-
-/* ================================
-   TITULOS Y TEXTOS
-================================= */
-h1, h2, h3, h4, h5 {
-  font-weight: 800;
-  color: var(--brand);
-}
-
-p {
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-/* ================================
-   BOTONES PERSONALIZADOS
-================================= */
-.btn-brand {
-  background: linear-gradient(135deg, var(--brand), var(--brand-2));
-  color: #000;
-  font-weight: 700;
-  border: none;
-  border-radius: var(--radius);
-  padding: 0.6rem 1.2rem;
-}
-
-.btn-brand:hover {
-  filter: brightness(1.1);
-}
-
-/* ================================
-   FOOTER
-================================= */
-footer {
-  background: rgba(0,0,0,0.7);
-  padding: 2rem 0;
+/* === Banner hero con imagen + overlay oscuro === */
+.hero-banner{
+  position: relative;
+  min-height: 340px;             /* ajustá a gusto: 280–420px */
+  display: grid;
+  place-items: center;
   text-align: center;
-  color: var(--muted);
-  font-size: 0.9rem;
+  color: #fff;                   /* texto del banner en blanco */
+  padding: 3rem 1rem;
+  background:
+    linear-gradient( to bottom, rgba(0,0,0,.45), rgba(0,0,0,.45) ),  /* overlay */
+    url("../img/fondo.png") center / cover no-repeat;       /* <- tu imagen */
+  /* NOTA: no uses 'fixed' en móviles; produce saltos de scroll */
+}
+.hero-title-box {
+  background: rgba(255, 255, 255, 0.8); /* blanco translúcido */
+  padding: 1.5rem 2rem;
+  border-radius: 12px;                  /* esquinas redondeadas */
+  text-align: center;                   /* centrar texto */
+  max-width: 1000px;
+  margin: 0 auto;                       /* centrar en el medio */
+}
+
+.hero-title-box h1 {
+  margin: 0;
+  font-weight: 800;
+  color: #000;                          /* texto en negro sobre blanco */
+}
+
+/* Título y subtítulo dentro del banner */
+.hero-banner h1{
+  margin:0;
+  font-weight: 800;
+  letter-spacing:.2px;
+}
+.hero-banner .subtitle{
+  margin-top:.5rem;
+  color: rgba(255,255,255,.85);
+}
+
+/* Breadcrumb sobre la imagen (opcional) */
+.hero-banner .breadcrumb{
+  --bs-breadcrumb-divider: "›";
+  justify-content:center;
+  margin-bottom: .75rem;
+  color: rgba(255,255,255,.75);
+}
+
+/* Secciones normales… sobre fondo blanco */
+.section,
+.container{
+  background: #ffffff;
+}
+
+/* Cards más contrastadas sobre blanco */
+.card{
+  background:#0e3b1b;            /* si querés cards oscuras */
+  border:1px solid #e6e8ec;      /* o ponelas blancas si preferís */
+  color:#E9F1F7;
+}
+
+/* Responsive: bajar la altura del banner en móviles */
+@media (max-width: 576px){
+  .hero-banner{ min-height: 260px; padding: 2.5rem 1rem; }
+  .hero-banner h1{ font-size:1.8rem; }
 }
